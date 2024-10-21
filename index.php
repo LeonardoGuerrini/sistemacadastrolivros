@@ -36,18 +36,23 @@ if (isset($_POST['usuario']) || isset($_POST['senha'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Biblioteca</title>
+    <title>Login | Biblioteca</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+
 </head>
 <body>
-    <section>
-        <form action="" method="post">
-            <label for="usuario">Usuário</label>
-            <input type="text" name="usuario" id="usuario">
-            <label for="senha">Senha</label>
-            <input type="password" name="senha" id="senha">
-            <input type="submit" value="Acessar">
+    <section class="flex flex-col text-center m-4">
+        <h1 class="text-3xl">Acesso</h1>
+        <form action="" method="post" class="border rounded-2xl border-gray-400 m-auto mt-4 w-1/5 p-10">
+            <input type="text" name="usuario" id="usuario" placeholder="Usuário" class="border rounded-md border-gray-400 text-lg" required>
+            <br>
+            <input type="password" name="senha" id="senha" placeholder="Senha" class="border rounded-md border-gray-400 text-lg m-4" required>
+            <br>
+            <input type="submit" value="Acessar" class="m-2 border rounded-md px-3 py-1 border-gray-400 font-medium hover:cursor-pointer">
+            <br>
+            <a href="cadastro.php" class="text-sky-700 underline underline-offset-1">Criar conta</a>
         </form>
-        <a href="cadastro.php">Criar conta</a>
     </section>
 </body>
 </html>
