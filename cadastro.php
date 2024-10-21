@@ -33,7 +33,7 @@ if(isset($_POST['nome']) && isset($_POST['dtnascimento']) && isset($_POST['email
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro | Biblioteca</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="app.css">
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
@@ -52,7 +52,9 @@ if(isset($_POST['nome']) && isset($_POST['dtnascimento']) && isset($_POST['email
             <br>
             <input type="password" name="senha" id="senha" placeholder="Senha" class="border rounded-md border-gray-400 text-lg m-2 px-2" required>
             <br>
-            <input type="submit" value="Criar Conta" class="m-2 border rounded-md px-3 py-1 border-gray-400 font-medium hover:cursor-pointer">
+            <input type="submit" value="Criar Conta" class="m-2 border rounded-md px-3 py-1 border-gray-400 font-medium w-[40%] hover:cursor-pointer">
+            <br>
+            <a href="index.php" class="text-sky-700 underline underline-offset-1">Voltar para a página de Login</a>
         </form>
     </section>
 

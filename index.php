@@ -1,5 +1,7 @@
 <?php
 include('conexao.php');
+session_start();
+
 if (isset($_POST['usuario']) || isset($_POST['senha'])){
     if(strlen($_POST['usuario']) == 0){
         echo "Preencha seu usuário";
@@ -22,10 +24,14 @@ if (isset($_POST['usuario']) || isset($_POST['senha'])){
 
             $_SESSION['id'] = $usuario['id'];
             $_SESSION['nome'] = $usuario['nome'];
+            $_SESSION['dtnascimento'] = $usuario['dtnascimento'];
+            $_SESSION['email'] = $usuario['email'];
+            $_SESSION['usuario'] = $usuario['usuario'];
 
             header("Location: principal.php");
+            exit();
         } else{
-            echo "Falha! Usuário e/ou senha incorretos";
+            echo "<p class='text-lg text-center mt-4'>Falha! Usuário e/ou senha incorretos</p>";
         }
     }
 }
@@ -37,7 +43,7 @@ if (isset($_POST['usuario']) || isset($_POST['senha'])){
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | Biblioteca</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="app.css">
     <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
@@ -45,9 +51,9 @@ if (isset($_POST['usuario']) || isset($_POST['senha'])){
     <section class="flex flex-col text-center m-4">
         <h1 class="text-3xl">Acesso</h1>
         <form action="" method="post" class="border rounded-2xl border-gray-400 m-auto mt-4 w-1/5 p-10">
-            <input type="text" name="usuario" id="usuario" placeholder="Usuário" class="border rounded-md border-gray-400 text-lg" required>
+            <input type="text" name="usuario" id="usuario" placeholder="Usuário" class="border rounded-md border-gray-400 text-lg px-2" required>
             <br>
-            <input type="password" name="senha" id="senha" placeholder="Senha" class="border rounded-md border-gray-400 text-lg m-4" required>
+            <input type="password" name="senha" id="senha" placeholder="Senha" class="border rounded-md border-gray-400 text-lg m-4 px-2" required>
             <br>
             <input type="submit" value="Acessar" class="m-2 border rounded-md px-3 py-1 border-gray-400 font-medium hover:cursor-pointer">
             <br>
