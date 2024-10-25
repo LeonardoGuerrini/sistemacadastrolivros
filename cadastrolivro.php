@@ -31,33 +31,33 @@ if (!isset($_SESSION['id'])) {
         </ul>
     </nav>
 
-    <section class="flex flex-col text-center m-4">
+    <section class="flex flex-col text-center m-4 ">
         <h1 class="text-3xl">Cadastro de Livro</h1>
-        <form action="" method="post" class="border rounded-2xl border-gray-400 m-auto mt-4 w-1/5 p-10">
-            <input type="text" name="nomelivro" id="nomelivro" placeholder="Nome do Livro" class="border rounded-md border-gray-400 text-lg m-2 px-2" required>
-            <input type="text" name="descricao" id="descricao" placeholder="Descrição..." class="border rounded-md border-gray-400 text-lg m-2 px-2" required>
-            <input type="text" name="genero" id="genero" placeholder="Gênero" class="border rounded-md border-gray-400 text-lg m-2 px-2" required>
-            <input type="number" name="estoque" id="estoque" placeholder="Quantidade no estoque" class="border rounded-md border-gray-400 text-lg m-2 px-2" required>
-            <input type="number" name="valor" id="valor" placeholder="Valor Unitário" step="0.01" min="0" class="border rounded-md border-gray-400 text-lg m-2 px-2" required>
+        <form action="" method="post" class="border rounded-2xl border-gray-400 m-auto mt-4 p-10 md:w-[50%] lg:w-[40%] xl:w-[25%] 2xl:w-[20%]">
+            <input type="text" name="nome" id="nome" placeholder="Nome do Livro" class="border rounded-md border-gray-400 text-lg m-2" required>
+            <input type="text" name="descricao" id="descricao" placeholder="Descrição..." class="border rounded-md border-gray-400 text-lg m-2" required>
+            <input type="text" name="genero" id="genero" placeholder="Gênero" class="border rounded-md border-gray-400 text-lg m-2" required>
+            <input type="number" name="estoque" id="estoque" placeholder="Quantidade no estoque" class="border rounded-md border-gray-400 text-lg m-2" required>
+            <input type="number" name="valor" id="valor" placeholder="Valor Unitário" step="0.01" min="0" class="border rounded-md border-gray-400 text-lg m-2" required>
             <input type="submit" value="Cadastrar" class="m-2 border rounded-md px-3 py-1 border-gray-400 font-medium hover:cursor-pointer">
         </form>
     </section>
     <?php
-    if(isset($_POST['nomelivro']) && isset($_POST['descricao']) && isset($_POST['genero']) && isset($_POST['estoque']) && isset($_POST['valor'])){
-        $nomelivro = $mysqli->real_escape_string($_POST['nomelivro']);
+    if(isset($_POST['nome']) && isset($_POST['descricao']) && isset($_POST['genero']) && isset($_POST['estoque']) && isset($_POST['valor'])){
+        $nome = $mysqli->real_escape_string($_POST['nome']);
         $descricao = $mysqli->real_escape_string($_POST['descricao']);
         $genero = $mysqli->real_escape_string($_POST['genero']);
         $estoque = $mysqli->real_escape_string($_POST['estoque']);
         $valor = $mysqli->real_escape_string($_POST['valor']);
     
         // Verificar se o livro já existe
-        $sql = "SELECT * FROM livro WHERE nomelivro = '$nomelivro'";
+        $sql = "SELECT * FROM livro WHERE nome = '$nome'";
         $sql_query = $mysqli->query($sql);
     
         if($sql_query->num_rows > 0){
             echo "Usuário já cadastrado";
         } else{
-            $sql = "INSERT INTO livro(nomelivro, descricao, genero, estoque, valor) VALUES ('$nomelivro', '$descricao', '$genero', '$estoque', '$valor')";
+            $sql = "INSERT INTO livro(nome, descricao, genero, estoque, valor) VALUES ('$nome', '$descricao', '$genero', '$estoque', '$valor')";
     
             if($mysqli->query($sql) === TRUE){
                 echo "<p class='text-lg text-center mt-4'>Cadastro realizado com sucesso!</p>";

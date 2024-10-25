@@ -34,17 +34,17 @@
         
         <div>
             <h2 class="text-2xl mt-6 text-left">Livros Cadastrados</h2>
-            <div class="livrosCadastrados border rounded-md border-gray-400 w-[72%] mt-4 p-6 sm:w-[70%] sm:mt-4 sm:p-6 md:mt-4 md:p-6 md:w-[35%] lg:mt-4 lg:p-6 lg:w-[13%] ">
+            <div class="livrosCadastrados border rounded-md border-gray-400 w-[72%] mt-4 p-6 sm:w-[70%] sm:mt-4 sm:p-6 md:mt-4 md:p-6 md:w-[35%] lg:mt-4 lg:p-6 lg:w-[25%] 2xl:w-[15%]">
                 <?php
                     include('conexao.php');
                     $conn = new mysqli($host, $username, $senha, $dbname); // Conexão com o banco de dados sendo criada usando a classe mysqli
-                    $sql = "SELECT id, nomelivro FROM livro;"; // Consulta SQL a ser executada
+                    $sql = "SELECT id, nome FROM livro;"; // Consulta SQL a ser executada
                     $resultado = $conn->query($sql); // O método query() executa a consulta SQL no banco de dados
 
                     if ($resultado->num_rows > 0) { // Verifica se a consulta retornou alguma linha
                         // Exibindo os dados de cada linha
                         while($row = $resultado->fetch_assoc()) { // O método num_rows retorna o número de linhas obtidas pela consulta. Se o valor for maior que 0, significa que há registros na tabela | Cada iteração do while processa uma linha de resultado.
-                            echo "ID: " . $row["id"]. " | Nome: " . $row["nomelivro"]. "<br>";
+                            echo "ID: " . $row["id"]. " | Nome: " . $row["nome"]. "<br>";
                         }
                     } else {
                         echo "0 resultados encontrados";

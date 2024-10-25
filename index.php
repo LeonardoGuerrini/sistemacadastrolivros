@@ -50,7 +50,7 @@ if (isset($_POST['usuario']) || isset($_POST['senha'])){
 <body>
     <section class="flex flex-col text-center m-4">
         <h1 class="text-3xl">Acesso</h1>
-        <form action="" method="post" class="border rounded-2xl border-gray-400 m-auto mt-4 w-1/5 p-10">
+        <form action="" method="post" class="border rounded-2xl border-gray-400 m-auto mt-4 p-10 lg:1/5">
             <input type="text" name="usuario" id="usuario" placeholder="Usuário" class="border rounded-md border-gray-400 text-lg px-2" required>
             <br>
             <input type="password" name="senha" id="senha" placeholder="Senha" class="border rounded-md border-gray-400 text-lg m-4 px-2" required>
