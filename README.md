@@ -1,5 +1,5 @@
 # Simple Book Registration System
-This is a personal project and goal is practice my PHP fundamentals. In this application, it's possible to create an account in the system, log in and log out, register and delete a book.
+This is a personal project and the goal is to practice the fundamentals of PHP. In this application, you can create an account in the system, log in and log out, register and delete a book from the system.
 ## Using
 When you open the app, the first page will be the login page. If you already have an account, just fill in the fields and log in; otherwise, you will need to create a new account.
 
