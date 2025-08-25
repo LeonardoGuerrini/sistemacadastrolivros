@@ -30,7 +30,7 @@ https://github.com/user-attachments/assets/151240ec-9742-412a-972f-8305285b430a
 - [PHP](https://www.php.net/docs.php) - Programming Language
 - [MySQL](https://www.mysql.com/) - Relational Database Management System
 - [Xampp](https://www.apachefriends.org/index.html) - PHP Development Environment
-- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) and [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS) - Front End
+- [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) and [TailwindCSS](https://tailwindcss.com/) - Front End
 
 ## Authors
 
