@@ -1,5 +1,7 @@
 # Simple Book Registration System
 
+![Badge Finished](http://img.shields.io/static/v1?label=STATUS&message=Finished%20&color=GREEN&style=for-the-badge)
+
 This is a personal project and goal is practice my PHP fundamentals. In this application, it's possible to create an account in the system, log in and log out, register and delete a book.
 ## Using
 
